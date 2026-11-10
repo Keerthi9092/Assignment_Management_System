@@ -21,35 +21,6 @@ The Assignment Management System is a web-based application designed to simplify
 - Grade appeal management
 - Audit logs for tracking important changes
 
-## Project Structure
-```text
-Assignment-Management-System/
-│
-├── app/
-│   ├── main.py
-│   ├── models/
-│   └── routes/
-│
-├── static/
-│   ├── index.html
-│   ├── css/
-│   └── js/
-│
-├── database/
-│   ├── schema.sql
-│   └── demo_seed.sql
-│
-├── scripts/
-├── data/
-├── docs/
-├── requirements.txt
-├── .env.example
-├── .gitignore
-└── README.md
-```
-
-## Installation and Setup
-
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/your-username/Assignment-Management-System.git
