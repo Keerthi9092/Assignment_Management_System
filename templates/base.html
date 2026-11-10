@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>AssignmentHub · Academic workspace</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <aside>
+
+        <a class="brand" href="/">
+            A
+            <span>
+                AssignmentHub
+                <small>ACADEMIC WORKSPACE</small>
+            </span>
+        </a>
+
+        <p class="nav-label">WORKSPACE</p>
+
+        <a
+            class="nav {% if request.path == '/' %}active{% endif %}"
+            href="/"
+        >
+            Overview
+        </a>
+
+        {% for t in [
+            'courses',
+            'assignments',
+            'learners',
+            'submissions',
+            'grades',
+            'appeals'
+        ] %}
+
+            <a
+                class="nav {% if t in request.path %}active{% endif %}"
+                href="{{ url_for('records', name=t) }}"
+            >
+                {{ t.title() }}
+            </a>
+
+        {% endfor %}
+
+        <details>
+
+            <summary>Supporting records</summary>
+
+            {% for t in tables if t not in [
+                'courses',
+                'assignments',
+                'learners',
+                'submissions',
+                'grades',
+                'appeals'
+            ] %}
+
+                <a
+                    class="nav"
+                    href="{{ url_for('records', name=t) }}"
+                >
+                    {{ t.replace('_', ' ').title() }}
+                </a>
+
+            {% endfor %}
+
+        </details>
+
+        <div class="sidebar-note">
+            Your academic workspace.
+            <br>
+
+            <small>
+                Synthetic data · Read-only demo
+            </small>
+        </div>
+
+    </aside>
+
+    <main>
+
+        <header>
+
+            <span>
+                Workspace /
+                <b>
+                    {{ name.replace('_', ' ').title() if name else 'Overview' }}
+                </b>
+            </span>
+
+            <span class="avatar">AH</span>
+
+        </header>
+
+        {% block content %}
+        {% endblock %}
+<footer>
+    AssignmentHub · Flask + MySQL · Academic workspace
+</footer>
+    </main>
+
+</body>
+</html>

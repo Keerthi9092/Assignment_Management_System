@@ -1,0 +1,6 @@
+course_id,course_code,course_name,status
+1,CSE001,Programming,active
+2,CSE002,Databases,active
+3,CSE003,Web Development,active
+4,CSE004,Data Structures,active
+5,CSE005,Software Engineering,active

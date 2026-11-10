@@ -1,0 +1,22 @@
+{
+  "counts": {
+    "courses": 5,
+    "learners": 10000,
+    "enrollments": 50000,
+    "assignments": 1000,
+    "rubrics": 1000,
+    "rubric_criteria": 3000,
+    "submissions": 30000,
+    "submission_artifacts": 28779,
+    "grades": 28779,
+    "grade_criterion_scores": 86337,
+    "feedback": 28779,
+    "resubmissions": 0,
+    "appeals": 482,
+    "audit_events": 29779
+  },
+  "syntax": "passed",
+  "same_seed_csv_checksums_match": true,
+  "flask_runtime": "Not executed: Flask unavailable in build environment",
+  "scope": "Read-only frontend prototype; not full original business requirements"
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="heading">
+    <div>
+        <p class="eyebrow">RECORD DETAILS</p>
+        <h1>{{ row.get('title', name.title()) }}</h1>
+    </div>
+
+    <a class="button" href="{{ url_for('records', name=name) }}">
+        Back to records
+    </a>
+</div>
+
+<section class="panel">
+
+    <dl>
+        {% for k, v in row.items() %}
+
+            <dt>{{ k.replace('_', ' ').title() }}</dt>
+
+            <dd>{{ v or 'Not specified' }}</dd>
+
+        {% endfor %}
+    </dl>
+
+</section>
+
+{% endblock %}

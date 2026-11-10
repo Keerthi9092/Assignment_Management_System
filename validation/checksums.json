@@ -1,0 +1,16 @@
+{
+  "submission_artifacts.csv": "bf0108cfdfca683662a68ea3b929b7bd0c1e9ca6c281a71e6fd2c97bc814f2d2",
+  "grades.csv": "0c3bfde2c28698eb7ae9350cc1ed43c72d7d8869a3549cffdb14ebdb38fc5ff0",
+  "appeals.csv": "f9b75f3bb91816e7064dcf60a4776091d42b9676dffcba034c33058e808a4f0f",
+  "enrollments.csv": "02b67eb935b7d9b13e2275b89cdccb0781a7d5624d54963677096d9e16462f7d",
+  "audit_events.csv": "ec041c6bdfd8a25c1f9186cb6bba6a48946b1dd93c05e6979279e8f43e9ec1fb",
+  "rubrics.csv": "d63a2077fea3139816d2888dd04b478c0cc4e326185e4c4642b6ae5552099cde",
+  "submissions.csv": "ea75a67adc719c673f5a48f2e9485b8fd258472ad49cf16a1aea3246b275ed77",
+  "assignments.csv": "58ba8f6e0be1a9da6ee3c1bf956afe799aa8856013e34dbe6ac4496c5dbea1c7",
+  "learners.csv": "0992977eca3654cd0a589677ba136f17540d450ae306dd7f55eaf68364ef1571",
+  "courses.csv": "7fac5c5ceaba5421ac694790829b32d4cf5f7e3c3c9be52f48a46e59afc7d94f",
+  "rubric_criteria.csv": "65b72d85b26a3aff9b27beb7b07f8e6cf11459e226750ce40f3fdfc651c5ce5a",
+  "feedback.csv": "8bd24e73c5bd20d41c8fd85d634cbd64781d94b93d3af7a147acae2f01773a24",
+  "grade_criterion_scores.csv": "ae73824bcbdef74706476d027190350575da34c050d94af9e7f519f2d6fcbbe4",
+  "resubmissions.csv": "fac2c4aef9e5c33e897211db9adf45747b9776848f64d479e97cb7eda767ac14"
+}

@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="heading">
+    <div>
+        <p class="eyebrow">YOUR WORKSPACE AT A GLANCE</p>
+
+        <h1>Make learning progress visible.</h1>
+
+        <p class="muted">
+            Assignments, submissions and academic reviews —
+            together in one place.
+        </p>
+    </div>
+
+    <a class="button" href="{{ url_for('records', name='assignments') }}">
+        Explore assignments →
+    </a>
+</div>
+
+<section class="hero">
+
+    <div>
+        <span class="pill">ACADEMIC OVERVIEW</span>
+
+        <h2>A clearer view of every assignment.</h2>
+
+        <p>
+            Explore coursework, review submission records
+            and understand grading outcomes.
+        </p>
+    </div>
+
+    <div class="hero-number">
+        {{ '{:,}'.format(counts.submissions) }}
+
+        <small>submission records</small>
+    </div>
+
+</section>
+
+<section class="cards">
+
+    {% for t, label in [
+        ('assignments', 'Assignments'),
+        ('learners', 'Learners'),
+        ('submissions', 'Submissions'),
+        ('appeals', 'Appeals')
+    ] %}
+
+        <a class="card" href="{{ url_for('records', name=t) }}">
+
+            <span class="muted">{{ label }}</span>
+
+            <strong>{{ '{:,}'.format(counts[t]) }}</strong>
+
+            <span class="card-link">Browse records ↗</span>
+
+        </a>
+
+    {% endfor %}
+
+</section>
+
+<section class="grid">
+
+    <article class="panel">
+
+        <div class="panel-title">
+            <h2>Assignment collection</h2>
+
+            <a href="{{ url_for('records', name='assignments') }}">
+                View all →
+            </a>
+        </div>
+
+        {% for a in recent %}
+
+            <a
+                class="assignment-row"
+                href="{{ url_for('detail', name='assignments', index=loop.index) }}"
+            >
+
+                <div class="icon">{{ loop.index }}</div>
+
+                <div>
+                    <b>{{ a.title }}</b>
+
+                    <small>
+                        {{ a.assignment_code }} · Due {{ a.due_at }}
+                    </small>
+                </div>
+
+                <span class="badge">{{ a.status }}</span>
+
+            </a>
+
+        {% else %}
+
+            <p class="muted">
+                No assignments yet. Run the generator.
+            </p>
+
+        {% endfor %}
+
+    </article>
+
+    <article class="panel">
+
+        <h2>Submission breakdown</h2>
+
+        <p class="muted">
+            Calculated from the loaded submission statuses.
+        </p>
+
+        {% for status, n in statuses.items() %}
+
+            <div class="bar-label">
+                <span>{{ status.replace('_', ' ').title() }}</span>
+
+                <b>{{ n }}</b>
+            </div>
+
+            <div class="bar">
+                <span
+                    style="width: {{ n / total * 100 if total else 0 }}%"
+                ></span>
+            </div>
+
+        {% endfor %}
+
+        <div class="notice">
+            Preview mode: records can be explored, but not edited.
+        </div>
+
+    </article>
+
+</section>
+
+{% endblock %}
